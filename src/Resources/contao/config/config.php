@@ -13,7 +13,7 @@
 use numero2\TagsBundle\ModuleNewsListRelatedTags;
 use numero2\TagsBundle\TagsModel;
 use numero2\TagsBundle\TagsRelModel;
-
+use numero2\TagsBundle\PurgeContaoTags;
 
 /**
  * MODELS
@@ -26,3 +26,8 @@ $GLOBALS['TL_MODELS'][TagsRelModel::getTable()] = TagsRelModel::class;
  * FRONTEND MODULES
  */
 $GLOBALS['FE_MOD']['news']['newslist_related_tags'] = ModuleNewsListRelatedTags::class;
+
+/**
+ * Purge
+ */
+$GLOBALS['TL_PURGE']['custom']['purgeContaoTags'] =['callback' => [PurgeContaoTags::class, 'execute']];
